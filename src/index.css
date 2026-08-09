@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-fredoka {
+    font-family: 'Fredoka', cursive, sans-serif;
+  }
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  /* Claymorphism Cards & Surfaces */
+  .clay-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    border-radius: 2rem;
+    box-shadow: 
+      12px 12px 24px rgba(230, 170, 190, 0.25),
+      -12px -12px 24px rgba(255, 255, 255, 0.95),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.9),
+      inset -3px -3px 8px rgba(220, 160, 180, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .clay-card-pink {
+    background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
+    border-radius: 2rem;
+    box-shadow: 
+      10px 10px 22px rgba(240, 160, 180, 0.28),
+      -10px -10px 22px rgba(255, 255, 255, 0.95),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.9),
+      inset -4px -4px 8px rgba(230, 140, 165, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+  }
+
+  .clay-card-purple {
+    background: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%);
+    border-radius: 2rem;
+    box-shadow: 
+      10px 10px 22px rgba(192, 132, 252, 0.22),
+      -10px -10px 22px rgba(255, 255, 255, 0.95),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.9),
+      inset -4px -4px 8px rgba(180, 120, 240, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+  }
+
+  .clay-card-blue {
+    background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+    border-radius: 2rem;
+    box-shadow: 
+      10px 10px 22px rgba(125, 211, 252, 0.28),
+      -10px -10px 22px rgba(255, 255, 255, 0.95),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.9),
+      inset -4px -4px 8px rgba(100, 180, 240, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+  }
+
+  .clay-card-cream {
+    background: linear-gradient(135deg, #FFFDF0 0%, #FEF3C7 100%);
+    border-radius: 2rem;
+    box-shadow: 
+      10px 10px 22px rgba(245, 208, 120, 0.25),
+      -10px -10px 22px rgba(255, 255, 255, 0.95),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.9),
+      inset -4px -4px 8px rgba(230, 180, 90, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+  }
+
+  /* Clay Buttons */
+  .clay-btn {
+    border-radius: 9999px;
+    box-shadow: 
+      6px 6px 14px rgba(230, 140, 165, 0.35),
+      -6px -6px 14px rgba(255, 255, 255, 0.9),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.8),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .clay-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+      8px 10px 20px rgba(230, 130, 160, 0.4),
+      -6px -6px 16px rgba(255, 255, 255, 0.95),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.9);
+  }
+
+  .clay-btn:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 
+      inset 4px 4px 8px rgba(180, 90, 120, 0.3),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+  }
+
+  /* Clay Inputs */
+  .clay-input {
+    border-radius: 1.5rem;
+    background: #FFF5F8;
+    box-shadow: 
+      inset 4px 4px 8px rgba(220, 150, 170, 0.22),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.95),
+      2px 2px 6px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 215, 225, 0.8);
+    transition: all 0.2s ease;
+  }
+
+  .clay-input:focus {
+    outline: none;
+    border-color: #FF80A0;
+    box-shadow: 
+      inset 4px 4px 8px rgba(220, 150, 170, 0.25),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.95),
+      0 0 12px rgba(255, 128, 160, 0.35);
+  }
+
+  /* 3D Flip Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Floating & Waving Keyframes */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes swaySoft {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.4)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 18px rgba(255, 105, 180, 0.8)); }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(-2deg); opacity: 0.95; }
+  25% { transform: scale(1.15) rotate(2deg); opacity: 1; }
+  50% { transform: scale(0.9) rotate(-1deg); opacity: 0.85; }
+  75% { transform: scale(1.1) rotate(3deg); opacity: 1; }
+}
+
+@keyframes butterflyWings {
+  0%, 100% { transform: scaleX(1) translateY(0); }
+  50% { transform: scaleX(0.2) translateY(-4px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: swaySoft 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.animate-flame {
+  animation: flameFlicker 0.6s infinite alternate ease-in-out;
+}
+
+.animate-wings {
+  animation: butterflyWings 0.35s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF0F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFA0B4;
+  border-radius: 10px;
+  border: 2px solid #FFF0F5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF7090;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Mi Amor Birthday Love Letter",
+  "description": "A secret interactive claymorphism birthday gift and digital love letter for mi amor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
